@@ -423,6 +423,7 @@ def main():
         st.markdown("### **Created by: Engr. Charles Arthel Rey, M.Sc., J.D. (cand.)**")
         st.markdown("*A Final Requirement for the Course: Environmental Rights and Legal Remedies in the Philippines*")
         st.markdown("*Professor: Atty. Maria Roda Cisnero, M.D.S., J.D.*")
+        st.markdown("*Ateneo Law School*")
         st.divider()
 
         st.write("Choose your review module:")
