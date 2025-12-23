@@ -229,29 +229,6 @@ def get_embedding_function():
     return embeddings
 
 def generate_rag_answer(query_text: str) -> str:
-    # --- Step 1: Retrieve context from Chroma DB ---
-    embedding_function = get_embedding_function()
-    db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
-    results = db.similarity_search_with_score(query_text, k=5)
-    context_text = " ".join([doc.page_content for doc, _score in results])
-
-    # --- Step 2: Prepare prompt ---
-    prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
-    prompt = prompt_template.format(context=context_text, question=query_text)
-
-    # --- Step 3: Send prompt to cloud/virtual model ---
-    data = {
-        "model": "qwen3-vl:235b-cloud",
-        "messages": [{"role": "user", "content": prompt}],
-        "stream": False
-    }
-    url = "http://localhost:11434/api/chat"
-    #try:
-    #    response = requests.post(url, json=data)
-    #    response_json = response.json()
-    #    bot_reply = response_json['message']['content']
-    #    return bot_reply
-    #except Exception as e:
     return f"Cannot proceed. EcoLEX Chatbot API is available only for local installations."
 
 
