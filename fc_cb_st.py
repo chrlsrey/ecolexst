@@ -228,7 +228,6 @@ def get_embedding_function():
     embeddings = OllamaEmbeddings(model="nomic-embed-text")
     return embeddings
 
-
 def generate_rag_answer(query_text: str) -> str:
     # --- Step 1: Retrieve context from Chroma DB ---
     embedding_function = get_embedding_function()
@@ -247,13 +246,13 @@ def generate_rag_answer(query_text: str) -> str:
         "stream": False
     }
     url = "http://localhost:11434/api/chat"
-    try:
-        response = requests.post(url, json=data)
-        response_json = response.json()
-        bot_reply = response_json['message']['content']
-        return bot_reply
-    except Exception as e:
-        return f"###Cannot proceed. EcoLEX Chatbot API is available only for local installations."
+    #try:
+    #    response = requests.post(url, json=data)
+    #    response_json = response.json()
+    #    bot_reply = response_json['message']['content']
+    #    return bot_reply
+    #except Exception as e:
+    return f"Cannot proceed. EcoLEX Chatbot API is available only for local installations."
 
 
 # --- SHARED FUNCTIONS ---
@@ -274,7 +273,7 @@ def grade_essay(user_essay, suggested_answer):
         response = requests.post(OLLAMA_URL, json=data)
         return response.json()["message"]["content"]
     except Exception as e:
-        return f"###Compare your answer manually. EcoLEX AI Grader API is available only for local installations."
+        return f"Manually compare your answer with the suggested answer. EcoLEX AI Grader API is available only for local installations."
 
 
 def reset_matching():
@@ -467,8 +466,8 @@ def main():
             st.session_state.path = "chatbot"
             st.rerun()
 
-        st.sidebar.markdown("### Review Resources")
-        st.sidebar.info("Coverage: Rules of Procedure for Environmental Cases.")
+        #st.sidebar.markdown("### Review Resources")
+        #st.sidebar.info("Coverage: Rules of Procedure for Environmental Cases.")
 
 
     elif st.session_state.path == "essay":
