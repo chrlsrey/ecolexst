@@ -420,7 +420,7 @@ def main():
     if st.session_state.path == "dashboard":
         st.set_page_config(page_title="EcoLEX Dashboard", page_icon="⚖️")
         st.title("⚖️ **EcoLEX: Bar Exam Reviewer**")
-        st.markdown("### Created by: Engr. Charles Arthel Rey, M.Sc., J.D. (cand)")
+        st.markdown("### *Created by: Engr. Charles Arthel Rey, M.Sc., J.D. (cand)*")
         st.divider()
 
         st.write("Choose your review module:")
