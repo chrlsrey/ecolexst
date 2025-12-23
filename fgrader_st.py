@@ -64,7 +64,7 @@ def grade_essay(user_essay, suggested_answer):
         response = requests.post(OLLAMA_URL, json=data)
         return response.json()["message"]["content"]
     except Exception as e:
-        return f"# ⚠️ The Free Ollama Language Model is only available for local deployment. The local installation is capable of giving a score."
+        return f"### Thank you for answering. \nThe Free Ollama Language Model is only available for local deployment. \nThis local installation is capable of giving a score."
 
 
 def main():
