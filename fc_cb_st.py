@@ -229,7 +229,7 @@ def get_embedding_function():
     return embeddings
 
 def generate_rag_answer(query_text: str) -> str:
-    return f"Hello, future Atenean Lawyer! Sadly, inquiry cannot proceed. EcoLEX Chatbot API is available only for local installations."
+    return f"Hello, future Atenean Lawyer! \n\nSadly, your inquiry cannot proceed. \nEcoLEX Chatbot API is available only for local installations."
 
 
 # --- SHARED FUNCTIONS ---
@@ -250,7 +250,7 @@ def grade_essay(user_essay, suggested_answer):
         response = requests.post(OLLAMA_URL, json=data)
         return response.json()["message"]["content"]
     except Exception as e:
-        return f"Hello, future Atenean Lawyer! \nManually compare your answer with the suggested answer. EcoLEX AI Grader API is available only for local installations."
+        return f"Hello, future Atenean Lawyer! \n\nManually compare your answer with the suggested answer. \nEcoLEX AI Grader API is available only for local installations."
 
 
 def reset_matching():
