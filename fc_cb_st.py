@@ -419,10 +419,10 @@ def main():
 
     if st.session_state.path == "dashboard":
         st.set_page_config(page_title="EcoLEX Dashboard", page_icon="⚖️")
-        st.title("⚖️ **EcoLEX: Bar Exam Reviewer**")
+        st.title("⚖️ **EcoLEX: Bar Exam Review Companion**")
         st.markdown("### **Created by: Engr. Charles Arthel Rey, M.Sc., J.D. (cand.)**")
         st.markdown("*A Final Requirement for the Course: Environmental Rights and Legal Remedies in the Philippines*")
-        st.markdown("*Professor: Atty. Maria Roda Cisnero, MDS, J.D.*")
+        st.markdown("*Professor: Atty. Maria Roda Cisnero, M.D.S., J.D.*")
         st.divider()
 
         st.write("Choose your review module:")
